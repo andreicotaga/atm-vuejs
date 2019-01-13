@@ -1,0 +1,46 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Automated teller machine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config build/webpack.config.dev.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreicotaga/atm-vuejs.git"
+  },
+  "keywords": [
+    "Automated",
+    "Teller",
+    "Machine",
+    "for",
+    "WEITBLICK"
+  ],
+  "author": "Andrei Cotaga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreicotaga/atm-vuejs/issues"
+  },
+  "homepage": "https://github.com/andreicotaga/atm-vuejs#readme",
+  "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "vee-validate": "^2.1.5",
+    "vue": "^2.5.22",
+    "vue-router": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "vue-loader": "^15.5.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.22",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
