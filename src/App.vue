@@ -1,10 +1,12 @@
 <template>
-    <div>
-        <Header/>
-        <b-container fluid>
-            <RouterView />
-        </b-container>
-    </div>
+    <transition name="fade" mode="out-in">
+        <div>
+            <Header/>
+            <b-container fluid>
+                <RouterView />
+            </b-container>
+        </div>
+    </transition>
 </template>
 
 <script>
