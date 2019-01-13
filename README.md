@@ -1,2 +1,2 @@
-"# atm-vuejs" 
-"# atm-vuejs" 
+# atm-vuejs
+Automated teller machine
