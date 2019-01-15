@@ -16,7 +16,7 @@
 
     export default {
         name: "Login",
-        components: {LoginForm}
+        components: { LoginForm }
     }
 </script>
 
