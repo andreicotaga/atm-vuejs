@@ -1,22 +1,26 @@
 <template>
-    <b-row class="login-page">
-        <b-col md="6" offset-md="3" class="login-page__content">
-            <div class="login-page__content--title">
-                <h1>Login in your account</h1>
-            </div>
-            <div class="login-page__content--form">
-                <LoginForm/>
-            </div>
-        </b-col>
-    </b-row>
+    <div>
+        <Header/>
+        <b-row class="login-page">
+            <b-col md="6" offset-md="3" class="login-page__content">
+                <div class="login-page__content--title">
+                    <h1>Login in your account</h1>
+                </div>
+                <div class="login-page__content--form">
+                    <LoginForm/>
+                </div>
+            </b-col>
+        </b-row>
+    </div>
 </template>
 
 <script>
     import LoginForm from "../components/LoginForm.vue";
+    import Header from "../components/Header.vue";
 
     export default {
         name: "Login",
-        components: { LoginForm }
+        components: { Header, LoginForm }
     }
 </script>
 

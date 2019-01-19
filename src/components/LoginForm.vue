@@ -35,6 +35,7 @@
 
 <script>
     export default {
+        name: 'LoginForm',
         data () {
             return {
                 account: {
@@ -65,7 +66,9 @@
                                     this.successMessage = 'User is logged in! Redirecting...';
                                     this.success = true;
 
-                                    this.$router.push('/account');
+                                    this.$store.dispatch('getUser');
+
+                                    this.$router.push('/account/deposit');
                                 }
                                 else
                                 {
@@ -83,14 +86,5 @@
 </script>
 
 <style lang="css" scoped>
-    span
-    {
-        color: red;
-        font-size: 12px;
-    }
 
-    .remote_success
-    {
-        color: green;
-    }
 </style>

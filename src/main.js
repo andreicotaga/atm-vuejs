@@ -9,12 +9,15 @@ import VueAxios from 'vue-axios'
 
 import BootstrapVue from 'bootstrap-vue'
 
-import '../assets/login.css'
+import '../assets/sidebar.css'
+import '../assets/main.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(BootstrapVue);
-Vue.use(VeeValidate);
+Vue.use(VeeValidate,{
+    fieldsBagName: 'vvFields'
+});
 Vue.use(VueAxios, axios);
 
 const token = localStorage.getItem('token');
