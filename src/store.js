@@ -64,7 +64,8 @@ export const store = new Vuex.Store({
                 }
             })
         },
-        logout ({ commit }) {
+        logout ({ commit })
+        {
             return new Promise(resolve =>
             {
                 commit('LOGOUT_USER');
@@ -74,26 +75,36 @@ export const store = new Vuex.Store({
                 resolve()
             })
         },
-        deposit ({ commit }, payload) {
-            return new Promise(resolve => {
+        deposit ({ commit }, payload)
+        {
+            return new Promise(resolve =>
+            {
                 axios.put(apiUrl + '/cashier/deposit', {
                     'amount': payload.amount,
                     'comment': payload.comment
-                }).then((response) => {
-                    if (response.data.status === 'SUCCESS') {
+                }).then((response) =>
+                {
+                    if (response.data.status === 'SUCCESS')
+                    {
                         commit('USER_DATA', response.data.data);
                         resolve(response.data.data)
                     }
+                }, (e) => {
+                    resolve(e.response);
                 })
             })
         },
-        withdraw ({ commit }, payload) {
-            return new Promise(resolve => {
+        withdraw ({ commit }, payload)
+        {
+            return new Promise(resolve =>
+            {
                 axios.put(apiUrl + '/cashier/withdraw', {
                     'amount': payload.amount,
                     'comment': payload.comment
-                }).then((response) => {
-                    if (response.data.status === 'SUCCESS') {
+                }).then((response) =>
+                {
+                    if (response.data.status === 'SUCCESS')
+                    {
                         commit('USER_DATA', response.data.data);
                         resolve(response.data.data)
                     }
@@ -101,11 +112,15 @@ export const store = new Vuex.Store({
                     {
                         resolve(response.data.error)
                     }
-                })
+                }, (e) => {
+                    resolve(e.response);
+                });
             })
         },
-        transactions ({ commit }) {
-            return new Promise(resolve => {
+        transactions ({ commit })
+        {
+            return new Promise(resolve =>
+            {
                 axios.get(apiUrl + '/cashier/transactions', { headers: { 'Authorization': 'Bearer ' + localStorage.getItem('token') }}).then((response) => {
 
                     if (response.hasOwnProperty('data'))
@@ -134,16 +149,22 @@ export const store = new Vuex.Store({
                     {
                         resolve(response.data.error)
                     }
+                }, (e) => {
+                    resolve(e.response);
                 })
             })
         },
-        transfer ({ commit }, payload) {
-            return new Promise(resolve => {
+        transfer ({ commit }, payload)
+        {
+            return new Promise(resolve =>
+            {
                 axios.put(apiUrl + '/cashier/transfer', {
                     'amount': payload.amount,
                     'card_number': payload.cardNumber
-                }).then((response) => {
-                    if (response.data.status === 'SUCCESS') {
+                }).then((response) =>
+                {
+                    if (response.data.status === 'SUCCESS')
+                    {
                         commit('USER_DATA', response.data.data);
                         resolve(response.data.data)
                     }
@@ -151,6 +172,8 @@ export const store = new Vuex.Store({
                     {
                         resolve(response.data.error)
                     }
+                }, (e) => {
+                    resolve(e.response);
                 })
             })
         },

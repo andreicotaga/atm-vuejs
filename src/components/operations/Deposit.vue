@@ -32,7 +32,7 @@
                     <span class="remote_error" v-if="failed">{{ errorMessage }}</span>
                     <span class="remote_success" v-if="success">{{ successMessage }}</span>
                 </b-form-group>
-                <b-button type="submit" variant="primary">Deposit</b-button>
+                <b-button :disabled="onWait" type="submit" variant="primary">Deposit</b-button>
             </b-form>
         </div>
     </div>
@@ -51,7 +51,8 @@
                 show: true,
                 failed: false,
                 success: false,
-                errorMessage: ''
+                errorMessage: '',
+                onWait: false
             }
         },
         methods: {
@@ -61,6 +62,8 @@
                 {
                     if(result)
                     {
+                        this.onWait = true;
+
                         this.$store.dispatch('deposit', {amount: this.deposit.amount, comment: this.deposit.comment})
                             .then((userData) =>
                             {
@@ -79,6 +82,7 @@
 
                                 this.deposit.amount = '';
                                 this.deposit.comment = '';
+                                this.onWait = false;
 
                                 this.$validator.reset()
                             });
